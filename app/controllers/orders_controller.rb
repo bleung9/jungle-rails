@@ -2,6 +2,13 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @products = @order.line_items
+    item_ids = []
+    @products.each do |item| 
+      item_ids.push(item.product_id)
+    end
+    @to_display = Product.where(:id => item_ids)
+    UserMailer.purchase_email(order: @order, to_display: @to_display).deliver_now
   end
 
   def create
