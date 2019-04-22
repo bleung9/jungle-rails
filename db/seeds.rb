@@ -133,4 +133,25 @@ cat3.products.create!({
 })
 
 
+Review.create!({
+  product_id: 11, 
+  user_id: 1, 
+  description: "item sux",
+  rating: 1
+})
+
+Review.create!({
+  product_id: 11, 
+  user_id: 2, 
+  description: "item rox",
+  rating: 5
+})
+
+Review.create!({
+  product_id: 10, 
+  user_id: 1, 
+  description: "item is ok",
+  rating: 3
+})
+
 puts "DONE!"
