@@ -17,26 +17,27 @@ RSpec.describe Product, type: :model do
 
     it "shouldn't be valid if it has no name" do
       subject.name = nil
-      subject.save!
-      # expect(subject).target.errors.full_messages
+      # subject.save!
+      expect(subject).target.errors.full_messages
     end
 
     it "shouldn't be valid if it has no price" do
       subject.price_cents = nil
-      subject.save!
-      # expect(subject).target.errors.full_messages
+      # subject.save!
+      expect(subject).target.errors.full_messages
     end
 
     it "shouldn't be valid if it has no quantity" do
       subject.quantity = nil
-      subject.save!
-      # expect(subject).target.errors.full_messages
+      # subject.save!
+      expect(subject).target.errors.full_messages
     end
     
     it "shouldn't be valid if it has no category" do
-      subject.category = nil
-      subject.save!
-      # expect(subject).target.errors.full_messages
+      # subject.category = nil
+      # subject.save!
+      p subject
+      expect(subject).target.errors.full_messages
     end
     
 
