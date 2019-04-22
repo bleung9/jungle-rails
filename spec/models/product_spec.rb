@@ -4,7 +4,6 @@ RSpec.describe Product, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
 
   describe 'Validations' do
-    test_cat = 
     subject { described_class.new(name: "Pikachu",
                                   price: 9001,
                                   quantity: 9002,
