@@ -24,15 +24,9 @@ RSpec.feature "Visitor navigates to product detail page by clicking on a product
 
     save_screenshot 'before_clicking_product.png'
 
-    # product = page.find('article.product:first-child')
-    # page.all('Details')[0].  
-    
-    page.all('article.product')[0].all('a')[0].click
-
-    # DEBUG
-
-    # VERIFY
-    expect(page).to have_css '.products-show'
+    cart = page.find("a[href='/cart']")
+    page.all(".fa-shopping-cart")[1].click
+    expect(cart.text).to eq ("My Cart (1)")
 
     save_screenshot 'product_details.png'
 
